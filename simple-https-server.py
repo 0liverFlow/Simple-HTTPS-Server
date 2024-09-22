@@ -23,7 +23,6 @@ server_address = (args.bind, args.port)
 httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
 
 # Creating an SSL context
-#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH)
 context.check_hostname = False
 context.verify_mode = ssl.CERT_NONE
